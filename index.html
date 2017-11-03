@@ -1,0 +1,62 @@
+<html>
+      <body>
+      <head>
+      <link rel="stylesheet" href="styles.css">
+      </head>
+       <h1 class="intro">Resources Test Server</h1>
+       <div class="opening">
+        <p>
+          Welcome to the resources test server.
+          The server endpoint runs at <a href="{url}">{url}</a>.
+          You can view the endpoint specification here:
+          <ul>
+            <li>
+<a href="https://app.swaggerhub.com/apis/niccokunzmann/schul-cloud-content-api/1.0.0">Swaggerhub</a></li>
+            <li><a href="https://github.com/schul-cloud/resources-api-v1#resources-api">Resources API definition</a></li>
+          </ul>
+          </p>
+        </div>
+   <div class="endpoints"
+        <h2>Endpoints</h2>
+        <p>
+          The following endpoints can be reached:
+          <ul class="text-2">
+            <li>
+              GET {url}/resources/ids<br/>
+              To get all resource ids. Command:
+              <pre>curl -X GET "{url}/resources/ids" -H  "accept: application/vnd.api+json"</pre>
+            </li>
+            <li>
+              POST {url}/resources<br/>
+              To add a new resource. Command:
+ <pre>curl -X POST "{url}/resources" -H  "accept: application/vnd.api+json" -H  "content-type: application/vnd.api+json" -d "{{  \\"data\\": {{    \\"type\\": \\"resource\\",    \\"attributes\\": {{ 
+\\"title\\": \\"Example Website\\",      \\"url\\": \\"https://example.org\\",      \\"licenses\\": [],      \\"mimeType\\": \\"text/html\\",      \\"contentCategory\\": \\"l\\", <br>     \\"languages\\": [        \\"en-en\\"      ],      \\"thumbnail\\": \\"http://cache.schul-cloud.org/thumbs/k32164876328764872384.jpg\\"    }},    \\"id\\": \\"cornelsen-physics-1\\"  }}}}" </pre>
+            </li>
+            <li>
+              DELETE {url}/resources<br/>
+              To remove all saved resources. Command:
+              <pre>curl -X DELETE "{url}/resources" -H  "accept: application/vnd.api+json"</pre>
+            </li>
+            <li>
+              GET {url}/resources/{{resourceId}}<br/>
+              To get a specific resource. Command:
+              <pre>curl -X GET "{url}/resources/cornelsen-physics-1" -H  "accept: application/vnd.api+json"</pre>
+            </li>
+            <li>
+              DELETE {url}/resources/{{resourceId}}<br/>
+              To delete a specific resource. Command:
+              <pre>curl -X DELETE "{url}/resources/cornelsen-physics-1" -H  "accept: application/vnd.api+json"</pre>
+            </li>
+          </ul>
+        </p>
+        <p>
+            Source code for this resources test server can be found
+             <a href="https://github.com/schul-cloud/schul_cloud_resources_server_tests">
+                here
+             </a>
+            and the issues can be discussed and problems can be written down.
+          
+        </p>
+</div>
+      </body>
+    </html>
